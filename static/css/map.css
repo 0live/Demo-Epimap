@@ -1,0 +1,61 @@
+.leaflet-top, .leaflet-bottom{
+  z-index: 450;
+}
+.map-control-panel{
+  position: absolute;
+  z-index: 450;
+}
+.legend-button{
+  float: right;
+  margin-left: 1em;
+  margin-top:1em;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,.2);
+}
+.legend-button:hover{
+  box-shadow: 0 0 10px 0 rgba(0,0,0,.2), 0 0 15px 0 rgba(0,0,0,.5);
+}
+.legend-panel{
+  display: none;
+  float: left;
+  margin: 0;
+  height:86vh;
+  width: 20em;
+  background-color: white;
+  text-align: center;
+}
+.closed{
+  display: none;
+}
+
+.legend-title{
+  border-bottom: 1px solid #eee;
+  font-family: 'Teko', sans-serif;
+  color: #d12121;
+  font-size: 1.2em;
+}
+.baselayers{
+  margin-top: 10px;
+  text-align: center;
+  font-family: 'Teko', sans-serif;
+  color: #adadad;
+  font-size: 1em;
+}
+.baselayers-title{
+  margin: auto;
+  text-align: center;
+  height: 50%;
+  background-color: red;
+}
+.baselayer-icon{
+  border-radius: 50%;
+  border: 1px solid #adadad;
+  cursor: pointer;
+  margin: 5px;
+}
+.selected-layer{
+  border: 2px solid #d12121;
+}

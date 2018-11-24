@@ -1,0 +1,24 @@
+.slider-content, .select-content{
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.dropdown-item.active, .dropdown-item:active{
+  background-color: #d12121;
+}
+.noUi-connect {
+    background: #CF2725;
+}
+.noUi-tooltip {
+    /* display: none; */
+    background: #EDEDED;
+    color: #565656;
+    border-radius: 5px;
+    padding: 8px;
+}
+.noUi-active .noUi-tooltip {
+    display: block;
+}
+/* .move-range-left{
+  padding-right: 0
+} */

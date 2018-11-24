@@ -1,0 +1,80 @@
+@font-face {
+  font-family: 'Teko';
+  src:  url('../fonts/Teko-Medium.woff2') format('woff2'),
+        url('../fonts/Teko-Medium.woff') format('woff');
+}
+
+
+/* LEFT MENU APPARENCE AND CONTENT */
+.left-menu{
+  width: 3%;
+  height:100vh;
+  border-right: 1px solid #dbd6d6;
+}
+.left-menu-head{
+  height: 6vh;
+  padding-top: 0.5vh;
+}
+.left-menu-box{
+  height: 50px;
+  border-top: 1px solid #dbd6d6;
+  border-bottom: 1px solid #dbd6d6;
+  padding: 10px;
+  cursor: pointer;
+}
+.inactive-icon{
+  display: none;
+}
+
+/* CONTAINER DIV */
+.content{
+  width: 97%;
+  position: absolute;
+  left: 3%;
+  top: 0;
+  height: 100vh;
+}
+
+/* TOP MENU APPARENCE AND CONTENT */
+.top-menu{
+  border-bottom: 1px solid #eee;
+  height: 6vh;
+}
+.app-title{
+  font-family: 'Teko', sans-serif;
+  font-size: 2.3em;
+  padding-left: 10px;
+  color: #d12121;
+}
+.app-subtitle{
+  margin-left: 15px;
+  color: #adadad;
+  font-size: 20px;
+}
+.select-menu{
+  display: flex;
+  height: 8vh;
+  border-bottom: 1px solid #eee;
+  z-index: 460;
+}
+/* CENTRALS DIVS */
+.no-marge{
+  padding: 0;
+  margin: 0;
+}
+#map{
+  background-color: #CFD0D0;
+  height:85vh;
+  display: flex;
+  position: relative;
+}
+#charts{
+  background-color: #f9f9f9;
+  color: white;
+  height:85vh;
+  /* display: flex; */
+}
+#map h1, #charts h1{
+  margin: auto; /* Important */
+  text-align: center;
+}

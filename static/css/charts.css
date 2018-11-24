@@ -1,0 +1,15 @@
+.sectorlist{
+  margin-top: 20px;
+  display: inline-block;
+}
+.text-sectorlist{
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: end;
+  color: black;
+}
+
+.chartDiv{
+  height: 35vh;
+}
