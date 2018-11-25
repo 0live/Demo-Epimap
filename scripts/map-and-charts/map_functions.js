@@ -100,7 +100,16 @@ function displayAttack(dataset, tresholds){
           layer.on('mouseout', function (e) {
               this.closePopup();
           });
-          if (attackRate <= tresholds[0]) {
+          if (v['result'] == 0) {
+            layer.setStyle({
+              "weight": 1,
+              "color": "#000",
+              "opacity": 0.7,
+              "fillColor": "#FFF",
+              "fillOpacity": 0.9
+            });
+          }
+          if (attackRate <= tresholds[0] && v['result'] != 0) {
             layer.setStyle({
               "weight": 1,
               "color": "#000",
@@ -176,7 +185,16 @@ function displayAttack(dataset, tresholds){
           layer.on('mouseout', function (e) {
               this.closePopup();
           });
-          if (attackRate <= tresholds[0]) {
+          if (v['result'] == 0) {
+            layer.setStyle({
+              "weight": 1,
+              "color": "#000",
+              "opacity": 0.7,
+              "fillColor": "#FFF",
+              "fillOpacity": 0.9
+            });
+          }
+          if (attackRate <= tresholds[0] && v['result'] != 0) {
             layer.setStyle({
               "weight": 1,
               "color": "#000",
@@ -262,7 +280,16 @@ function displayMortality(dataset, tresholds){
           layer.on('mouseout', function (e) {
               this.closePopup();
           });
-          if (mortalityRate <= tresholds[0]) {
+          if (v['result'] == 0) {
+            layer.setStyle({
+              "weight": 1,
+              "color": "#000",
+              "opacity": 0.7,
+              "fillColor": "#FFF",
+              "fillOpacity": 0.9
+            });
+          }
+          if (mortalityRate <= tresholds[0] && v['result'] != 0) {
             layer.setStyle({
               "weight": 1,
               "color": "#000",
@@ -339,7 +366,16 @@ function displayMortality(dataset, tresholds){
               this.closePopup();
           });
           layer.feature.properties.selected = true
-          if (mortalityRate <= tresholds[0]) {
+          if (v['result'] == 0) {
+            layer.setStyle({
+              "weight": 1,
+              "color": "#000",
+              "opacity": 0.7,
+              "fillColor": "#FFF",
+              "fillOpacity": 0.9
+            });
+          }
+          if (mortalityRate <= tresholds[0] && v['result'] != 0) {
             layer.setStyle({
               "weight": 1,
               "color": "#000",
