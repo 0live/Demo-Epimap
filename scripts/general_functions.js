@@ -41,28 +41,28 @@ const numb2Month = {
 const getTresholds = (indicator) => ({
   'mgt-1': 'No tresholds',
   'mgt-2': 'No tresholds',
-  'mgt-3': [2,5,10,20,50],
-  'mgt-4': [0.05,0.1,0.2,0.5,1],
+  'mgt-3': [0.1,0.2,0.5,0.8,1],
+  'mgt-4': [0.0001,0.0002,0.0003,0.0005,0.001],
   'chl-1': 'No tresholds',
   'chl-2': 'No tresholds',
-  'chl-3': [10,25,50,100,200],
-  'chl-4': [0.05,0.1,0.2,0.5,1],
+  'chl-3': [0.2,0.5,0.8,1.5,2],
+  'chl-4': [0.0001,0.0002,0.0003,0.0005,0.001],
   'rgl-1': 'No tresholds',
   'rgl-2': 'No tresholds',
-  'rgl-3': [10,25,50,100,200],
-  'rgl-4': [0.05,0.1,0.2,0.5,1],
+  'rgl-3': [0.2,0.5,0.8,1.5,2],
+  'rgl-4': [0.00001,0.00002,0.00003,0.00005,0.0001],
   'hpe-1': 'No tresholds',
   'hpe-2': 'No tresholds',
-  'hpe-3': [2,5,10,20,50],
+  'hpe-3': [0.02,0.05,0.08,0.15,0.2],
   'hpe-4': [0.05,0.1,0.2,0.5,1],
   'fvj-1': 'No tresholds',
   'fvj-2': 'No tresholds',
-  'fvj-3': [2,5,10,20,50],
-  'fvj-4': [0.05,0.1,0.2,0.5,1],
+  'fvj-3': [0.002,0.005,0.008,0.015,0.02],
+  'fvj-4': [0.00001,0.00002,0.00003,0.00005,0.0001],
   'plu-1': 'No tresholds',
   'plu-2': 'No tresholds',
-  'plu-3': [1000,2000,4000,6000,10000],
-  'plu-4': [0.05,0.1,0.2,0.5,1],
+  'plu-3': [100,200,400,600,1000],
+  'plu-4': [0.001,0.002,0.004,0.005,0.01],
   'dng-1': 'No tresholds',
   'dng-2': 'No tresholds',
   'dng-3': [2,5,10,20,50],
@@ -91,7 +91,7 @@ function setPopUpContent(value, name){
     type = "Décès : "+value
   } else if (analyser.indicator == 3) {
     type = "Attaque : "+value
-  } else if (analyser.indicator == 1) {
+  } else if (analyser.indicator == 4) {
     type = "Mortalité : "+value
   }
   return place+type
