@@ -429,21 +429,21 @@ function displayCase(dataset, minValue){
               var lon = centroid.geometry.coordinates[0];
               var lat = centroid.geometry.coordinates[1];
               let circle
-              const radius = getCircleRadius(v['result'], minValue, 5000)
+              const radius = getCircleRadius(v['result'], minValue, 10000)
               circle = L.circle([lat, lon], {
                 "weight": 1,
                 "color": "#000",
                 "opacity": 0.7,
-                "fillColor": "#B8474F",
+                "fillColor": "#e91625",
                 "fillOpacity": 0.7,
                 "radius": radius
               })
             caseCircles.addLayer(circle)
-            layer.bindPopup(setPopUpContent(v['result'], layer.feature.properties.name));
-            layer.on('mouseover', function (e) {
+            circle.bindPopup(setPopUpContent(v['result'], layer.feature.properties.name));
+            circle.on('mouseover', function (e) {
                 this.openPopup();
             });
-            layer.on('mouseout', function (e) {
+            circle.on('mouseout', function (e) {
                 this.closePopup();
             });
           }
@@ -470,21 +470,21 @@ function displayCase(dataset, minValue){
           var lon = centroid.geometry.coordinates[0];
           var lat = centroid.geometry.coordinates[1];
           let circle
-          const radius = getCircleRadius(v['result'], minValue, 10000)
+          const radius = getCircleRadius(v['result'], minValue, 30000)
           circle = L.circle([lat, lon], {
             "weight": 1,
             "color": "#000",
             "opacity": 0.7,
-            "fillColor": "#B8474F",
+            "fillColor": "#e91625",
             "fillOpacity": 0.7,
             "radius": radius
           })
           caseCircles.addLayer(circle)
-          layer.bindPopup(setPopUpContent(v['result'], layer.feature.properties.name));
-          layer.on('mouseover', function (e) {
+          circle.bindPopup(setPopUpContent(v['result'], layer.feature.properties.name));
+          circle.on('mouseover', function (e) {
               this.openPopup();
           });
-          layer.on('mouseout', function (e) {
+          circle.on('mouseout', function (e) {
               this.closePopup();
           });
         }
@@ -519,21 +519,21 @@ function displayDeath(dataset, minValue){
             var lon = centroid.geometry.coordinates[0];
             var lat = centroid.geometry.coordinates[1];
             let circle
-            const radius = getCircleRadius(v['result'], minValue, 5000)
+            const radius = getCircleRadius(v['result'], minValue, 10000)
             circle = L.circle([lat, lon], {
               "weight": 1,
               "color": "#000",
               "opacity": 0.7,
-              "fillColor": "#B8474F",
+              "fillColor": "#e91625",
               "fillOpacity": 0.7,
               "radius": radius
             })
             caseCircles.addLayer(circle)
-            layer.bindPopup(setPopUpContent(v['result'], layer.feature.properties.name));
-            layer.on('mouseover', function (e) {
+            circle.bindPopup(setPopUpContent(v['result'], layer.feature.properties.name));
+            circle.on('mouseover', function (e) {
                 this.openPopup();
             });
-            layer.on('mouseout', function (e) {
+            circle.on('mouseout', function (e) {
                 this.closePopup();
             });
           }
@@ -561,21 +561,21 @@ function displayDeath(dataset, minValue){
           var lon = centroid.geometry.coordinates[0];
           var lat = centroid.geometry.coordinates[1];
           let circle
-          const radius = getCircleRadius(v['result'], minValue, 10000)
+          const radius = getCircleRadius(v['result'], minValue, 30000)
           circle = L.circle([lat, lon], {
             "weight": 1,
             "color": "#000",
             "opacity": 0.7,
-            "fillColor": "#B8474F",
+            "fillColor": "#e91625",
             "fillOpacity": 0.7,
             "radius": radius
           })
           caseCircles.addLayer(circle)
-          layer.bindPopup(setPopUpContent(v['result'], layer.feature.properties.name));
-          layer.on('mouseover', function (e) {
+          circle.bindPopup(setPopUpContent(v['result'], layer.feature.properties.name));
+          circle.on('mouseover', function (e) {
               this.openPopup();
           });
-          layer.on('mouseout', function (e) {
+          circle.on('mouseout', function (e) {
               this.closePopup();
           });
         }
