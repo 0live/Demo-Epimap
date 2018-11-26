@@ -18,3 +18,6 @@ Watch for change on selector filters or in the Slider object
 
 If change is detected: update the displayData object
 *  scripts/map-and-charts/display_data.js
+
+
+Demo : https://0live.github.io/DemoEpimap/
