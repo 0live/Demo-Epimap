@@ -3,15 +3,7 @@ $(document).on('change','#secteur',function(){
     const selection = $('#secteur').val()
     // Intialise analyser Object
     analyser.geo_mode = parseInt(selection)
-
     analyser.area_list = ['*']
-    // Change layer on the map
-    boundarieslayers.eachLayer(function(layer){
-      if (mymap.hasLayer(layer)) {
-        mymap.removeLayer(layer)
-      }
-    })
-    eval('level'+selection+'.addTo(mymap)')
     setAreaList(selection)
 });
 
@@ -115,11 +107,19 @@ function setAreaList(areamode){
 
   else if (areamode === '3') {
     $('#sectorlist').selectpicker('destroy')
-    const result = epibase.exec('SELECT DISTINCT lvl3, lvl3code FROM csv_extract ORDER BY lvl3')
+    const regions = epibase.exec('SELECT DISTINCT lvl3, lvl3code, lvl4, lvl4code FROM csv_extract ORDER BY lvl4, lvl3')
+    const countries = epibase.exec('SELECT DISTINCT lvl4, lvl4code FROM csv_extract ORDER BY lvl4')
+    console.log(countries);
     let query = '<select class="selectpicker form-control" title="Secteur" data-live-search="true" multiple id="sectorlist">'
     query += '<option selected value="*">Toutes les régions</option>'
-    $.each(result, function(i,v){
-      query += '<option value="'+v['lvl3code']+'">'+v['lvl3']+'</option>'
+    $.each(countries, function(i,v){
+      query += '<optgroup label="'+v['lvl4']+'">'
+      $.each(regions, function(item, value){
+        if (value['lvl4code'] == v['lvl4code']) {
+          query += '<option value="'+value['lvl3code']+'">'+value['lvl3']+'</option>'
+        }
+      })
+      query += '</optgroup>'
     })
     query += '</select>'
     $('#sectorSelector').html(query)
@@ -127,6 +127,15 @@ function setAreaList(areamode){
   }
 
   else if (areamode === '4') {
-    console.log("No country for old man");
+    $('#sectorlist').selectpicker('destroy')
+    const result = epibase.exec('SELECT DISTINCT lvl4, lvl4code FROM csv_extract ORDER BY lvl4')
+    let query = '<select class="selectpicker form-control" title="Secteur" data-live-search="true" multiple id="sectorlist">'
+    query += '<option selected value="*">Tous les pays</option>'
+    $.each(result, function(i,v){
+      query += '<option value="'+v['lvl4code']+'">'+v['lvl4']+'</option>'
+    })
+    query += '</select>'
+    $('#sectorSelector').html(query)
+    $('#sectorlist').selectpicker();
   }
 }

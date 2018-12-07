@@ -67,9 +67,14 @@ const customLayer3 = L.geoJson(null, {
     style: myStyle,
     onEachFeature: lvl3MapInteraction
 });
+const customLayer4 = L.geoJson(null, {
+    style: myStyle,
+    onEachFeature: lvl4MapInteraction
+});
 
 const level1 = omnivore.geojson('data/lvl2.geojson', null, customLayer1)
 const level2 = omnivore.geojson('data/lvl2.geojson', null, customLayer2)
 const level3 = omnivore.geojson('data/lvl3.geojson', null, customLayer3).addTo(mymap)
+const level4 = omnivore.geojson('data/lvl4.geojson', null, customLayer4)
 
-const boundarieslayers = L.layerGroup([level1, level2, level3])
+const boundarieslayers = L.layerGroup([level1, level2, level3, level4])

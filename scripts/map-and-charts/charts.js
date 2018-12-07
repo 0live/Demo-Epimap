@@ -100,7 +100,7 @@ function makeCharts(ds1, ds2, ds3, ds4, ds5, ds6) {
       maintainAspectRatio: false,
 			title: {
 				display: true,
-				text: "Décès et taux de mortalité"
+				text: "Décès et létalité"
 			},
 			scales: {
 				yAxes: [{

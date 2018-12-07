@@ -11,7 +11,7 @@ const analyser = {
   chartsDataSet: {},
   selectMapData(){
     // Select the disease column
-    const mapDiseaseSelection = 'SELECT MIN('+this.disease+'_'+this.indicator+') AS min, SUM('+this.disease+'_'+this.indicator+') AS result, COUNT('+this.disease+'_'+this.indicator+') AS occurence'
+    const mapDiseaseSelection = 'SELECT SUM('+this.disease+'_'+this.indicator+') AS result, COUNT('+this.disease+'_'+this.indicator+') AS occurence'
     // Select the area column
     let geoColumn = ''
     if (this.geo_mode === 1) {
@@ -154,6 +154,13 @@ const analyser = {
       mortality_dataset.push(v['mortality'] / v['occurence'])
     })
     makeCharts(labels1, attack_dataset, cases_dataset, labels2, mortality_dataset, death_dataset)
+    // Change layer on the map
+    boundarieslayers.eachLayer(function(layer){
+      if (mymap.hasLayer(layer)) {
+        mymap.removeLayer(layer)
+      }
+    })
+    eval('level'+this.geo_mode+'.addTo(mymap)')
     // Get tresholds for map representation
     const tresholds = getTresholds(this.disease+'-'+this.indicator)
     // Calculate the min value for the circle Radius
@@ -175,8 +182,6 @@ const analyser = {
     } else if (this.indicator == 4) {
       displayMortality(this.mapDataSet, tresholds)
     }
-
-
   }
 }
 

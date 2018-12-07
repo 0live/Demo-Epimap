@@ -84,6 +84,8 @@ function setPopUpContent(value, name){
     place = 'District : '+name+' / '
   } else if (analyser.geo_mode == 3) {
     place = "Région : "+name+' / '
+  } else if (analyser.geo_mode == 4) {
+    place = "Pays : "+name+' / '
   }
   if (analyser.indicator == 1) {
     type = "Cas : "+value
