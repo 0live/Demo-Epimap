@@ -62,9 +62,12 @@ function makeCharts(ds1, ds2, ds3, ds4, ds5, ds6) {
 		options: {
       responsive: true,
       maintainAspectRatio: false,
-			title: {
-				display: true,
-				text: "Cas et taux d'attaque"
+			// title: {
+			// 	display: true,
+			// 	text: "Cas et taux d'attaque"
+			// },
+			legend: {
+				display: false
 			},
 			scales: {
 				yAxes: [{
@@ -98,9 +101,12 @@ function makeCharts(ds1, ds2, ds3, ds4, ds5, ds6) {
 		options: {
 			responsive: true,
       maintainAspectRatio: false,
-			title: {
-				display: true,
-				text: "Décès et létalité"
+			// title: {
+			// 	display: true,
+			// 	text: "Décès et létalité"
+			// },
+			legend: {
+				display: false
 			},
 			scales: {
 				yAxes: [{
